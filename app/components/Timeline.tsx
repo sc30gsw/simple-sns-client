@@ -23,16 +23,19 @@ const Timeline = ({ posts }: TimelineProps) => {
     e.preventDefault()
 
     try {
-      const response = await fetch('http://localhost:4000/api/posts/post', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
+      const response = await fetch(
+        'https://simple-sns-api.onrender.com/api/posts/post',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            content,
+          }),
         },
-        body: JSON.stringify({
-          content,
-        }),
-      })
+      )
 
       const res = await response.json()
       if (!response.ok) {

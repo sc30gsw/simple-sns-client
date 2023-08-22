@@ -19,14 +19,17 @@ const Login = () => {
 
     // 新規登録APIの呼び出し
     try {
-      const response = await fetch('http://localhost:4000/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      })
+      const response = await fetch(
+        'https://simple-sns-api.onrender.com/api/auth/login',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        },
+      )
 
       const res = await response.json()
       if (!response.ok) {

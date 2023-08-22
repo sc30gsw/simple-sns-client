@@ -9,7 +9,7 @@ import type { Profile } from '../../types/User'
 const fetchUserProfile = async (userId: string) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/users/profile/${userId}`,
+      `https://simple-sns-api.onrender.com/api/users/profile/${userId}`,
       { headers: { 'Content-Type': 'application/json' }, cache: 'no-store' },
     )
 
@@ -28,7 +28,7 @@ const fetchUserProfile = async (userId: string) => {
 
 export const generateStaticParams = async () => {
   const response = await fetch(
-    'http://localhost:4000/api/users/profile/getAllProfiles',
+    'https://simple-sns-api.onrender.com/api/users/profile/getAllProfiles',
     { headers: { 'Content-Type': 'application/json' } },
   )
 

@@ -37,12 +37,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       const getLoginUser = async () => {
         try {
-          const response = await fetch('http://localhost:4000/api/auth/find', {
-            headers: {
-              'Content-Type': 'application/json',
-              Authorization: `Bearer ${storedToken}`,
+          const response = await fetch(
+            'https://simple-sns-api.onrender.com/api/auth/find',
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${storedToken}`,
+              },
             },
-          })
+          )
 
           const res = await response.json()
           if (!response.ok) {
