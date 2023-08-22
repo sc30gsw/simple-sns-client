@@ -24,7 +24,7 @@ const Timeline = ({ posts }: TimelineProps) => {
 
     try {
       const response = await fetch(
-        'https://simple-sns-api.onrender.com/api/posts/post',
+        `${process.env.NEXT_PUBLIC_API_BASE_URL as string}/posts/post`,
         {
           method: 'POST',
           headers: {

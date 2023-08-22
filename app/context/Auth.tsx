@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const getLoginUser = async () => {
         try {
           const response = await fetch(
-            'https://simple-sns-api.onrender.com/api/auth/find',
+            `${process.env.NEXT_PUBLIC_API_BASE_URL as string}/auth/find`,
             {
               headers: {
                 'Content-Type': 'application/json',

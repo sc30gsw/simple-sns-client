@@ -9,7 +9,7 @@ import type { Profile } from '../../types/User'
 const fetchUserProfile = async (userId: string) => {
   try {
     const response = await fetch(
-      `https://simple-sns-api.onrender.com/api/users/profile/${userId}`,
+      `${process.env.API_BASE_URL as string}/users/profile/${userId}`,
       { headers: { 'Content-Type': 'application/json' }, cache: 'no-store' },
     )
 

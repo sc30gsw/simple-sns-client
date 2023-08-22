@@ -18,7 +18,7 @@ const SignUpPage = () => {
     // 新規登録APIの呼び出し
     try {
       const response = await fetch(
-        'https://simple-sns-api.onrender.com/api/auth/register',
+        `${process.env.NEXT_PUBLIC_API_BASE_URL as string}/auth/register`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

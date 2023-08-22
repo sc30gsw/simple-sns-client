@@ -20,7 +20,7 @@ const Login = () => {
     // 新規登録APIの呼び出し
     try {
       const response = await fetch(
-        'https://simple-sns-api.onrender.com/api/auth/login',
+        `${process.env.NEXT_PUBLIC_API_BASE_URL as string}/auth/login`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
